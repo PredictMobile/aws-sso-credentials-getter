@@ -1,4 +1,4 @@
-## ssocred ##
+## ssocred
 
 SSOcred is a handy cli tool that will grab temporary AWS CLI login credentials from AWS SSO and put them in ~/.aws/credentials
 
