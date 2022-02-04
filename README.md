@@ -9,3 +9,12 @@ To install: \
 
 To use: \
 `ssocred {profile}`
+
+To set credentials to a custom profilename: \
+`ssocred {profile} {customProfile}`
+
+For instance when you want a default profile: \
+`ssocred {profile} default`
+
+You, can also set a custom profilename from any current profile that is not expired by running: \
+`ssocred {exsistinProfile} {customProfile}`
