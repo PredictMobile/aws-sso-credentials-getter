@@ -10,12 +10,9 @@
         "ssocred": "./bin/index.js"
     },
     "scripts": {
-        "fix": "yarn prettier --write ."
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+        "fix": "yarn prettier --write .",
+        "format": "yarn fix",
+        "postinstall": "husky install"
     },
     "lint-staged": {
         "*.{js,json,md}": [
@@ -27,8 +24,8 @@
         "ini": "^2.0.0"
     },
     "devDependencies": {
-        "husky": "^5.1.1",
-        "lint-staged": "^10.5.4",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
         "prettier": "^2.2.1",
         "prettier-plugin-packagejson": "^2.2.10"
     },
