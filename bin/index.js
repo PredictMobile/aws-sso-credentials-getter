@@ -1,14 +1,37 @@
 #!/usr/bin/env node
 
-// Delete the 0 and 1 argument (node and script.js)
-const args = process.argv.splice(process.execArgv.length + 2)
+import { Command } from "commander"
 
-// Retrieve the first argument
-const profile = args[0]
+// Define the program description
+const program = new Command()
+program
+    .version("2.0.0")
+    .description(
+        "A utility for setting aws creds from sso. It can also log you in to ECR"
+    )
 
-const customProfile = args[1] ? args[1] : undefined
+// Define the command-line argument (required)
+program.argument("<profile>", "The sso profile you want to set up creds for")
+
+// Define optional flags with values
+program.option(
+    "-cp, --customProfile <value>",
+    "Save the creds under a different profile"
+)
+program.option(
+    "-e, --ecr [region]",
+    "Login to ECR. If region not supplied it will use the default from the profile"
+)
+
+// Parse command-line arguments and options
+program.parse(process.argv)
+
+// Access the parsed values
+const profile = program.args[0]
+const options = program.opts()
+const customProfile = options.customProfile
+const ecr = options.ecr
 
 import SetCreds from "../lib/index.js"
 
-// Displays the text in the console
-SetCreds(profile, customProfile)
+SetCreds(profile, { customProfile, ecr })

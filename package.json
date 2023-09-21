@@ -1,6 +1,6 @@
 {
     "name": "aws-sso-credentials-getter",
-    "version": "1.2.2",
+    "version": "2.0.0",
     "repository": "git@github.com:PredictMobile/aws-sso-credentials-getter.git",
     "license": "MIT",
     "author": "Warrick Hill <warrick@predictmobile.com>",
@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "aws-sdk": "^2.849.0",
+        "commander": "^11.0.0",
         "ini": "^2.0.0"
     },
     "devDependencies": {
