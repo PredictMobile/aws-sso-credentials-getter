@@ -1,6 +1,6 @@
 {
     "name": "aws-sso-credentials-getter",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "repository": "git@github.com:PredictMobile/aws-sso-credentials-getter.git",
     "license": "MIT",
     "author": "Warrick Hill <warrick@predictmobile.com>",
@@ -11,8 +11,7 @@
     },
     "scripts": {
         "fix": "yarn prettier --write .",
-        "format": "yarn fix",
-        "postinstall": "husky install"
+        "format": "yarn fix"
     },
     "lint-staged": {
         "*.{js,json,md}": [
