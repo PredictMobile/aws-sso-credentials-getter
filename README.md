@@ -11,10 +11,16 @@ To use: \
 `ssocred {profile}`
 
 To set credentials to a custom profilename: \
-`ssocred {profile} {customProfile}`
+`ssocred {profile} -c {customProfile}`
 
 For instance when you want a default profile: \
-`ssocred {profile} default`
+`ssocred {profile} -c default`
 
-You, can also set a custom profilename from any current profile that is not expired by running: \
-`ssocred {exsistinProfile} {customProfile}`
+You can also set a custom profilename from any current profile that is not expired by running: \
+`ssocred {existingProfile} -c {customProfile}`
+
+To also login to ECR: \
+`ssocred {profile} -e`
+
+Add you can also login to a different ECR region: \
+`ssocred {profile} -e [region]`
